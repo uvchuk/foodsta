@@ -1,14 +1,31 @@
+@import "./utils/variables";
+@import "./utils/base";
+@import "./utils/mixins";
+@import "./utils/placeholders";
+
 .page-header {
 	&__container {
+		@extend %container;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: flex;
+		box-shadow: 0px 4px 24px rgba(105, 105, 105, 0.1);
+		@include mobile {
+			justify-content: space-between;
+		}
 	}
 
 	&__logo {
 	}
 
 	&__icon {
+		display: block;
 	}
 
 	&__nav {
+		@include mobile {
+			display: none;
+		}
 	}
 
 	&__item {
@@ -16,21 +33,52 @@
 
 	&__link {
 	}
+	&__menu {
+		&-btn {
+			@extend %btn;
+			@include mobile {
+				display: inline-block;
+			}
+			display: none;
+		}
+		&-icon {
+			display: block;
+		}
+	}
 
 	&__btn {
+		@include mobile {
+			display: none;
+		}
 	}
 }
 .hero {
 	&__container {
+		@extend %container;
+		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 50px;
+		}
 	}
 
 	&__title {
+		@extend %title;
 	}
 
 	&__description {
+		@include mobile {
+			margin-top: 28px;
+		}
+		line-height: 1.5;
 	}
 
 	&__btn {
+		@extend %btn;
+		@include mobile {
+			margin-top: 28px;
+		}
+		padding: 6px 18px;
+		background-color: var(--accent);
 	}
 
 	&__slider {
@@ -38,32 +86,114 @@
 }
 .offerings {
 	&__container {
+		@extend %container;
+		padding-top: 70px;
+		padding-bottom: 60px;
+		background-image: url(../img/bcgd/offering.png);
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	&__image {
+		&-wrapper {
+			position: relative;
+			margin: 0 auto;
+			width: 280px;
+			height: 280px;
+			border: 3px solid rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			box-shadow: inset #ffe550 0 0 0 9px;
+			background-clip: content-box;
+			background-color: var(--prim-bcgd);
+			&::after {
+				content: "";
+				display: block;
+				width: 130px;
+				height: 45px;
+				position: absolute;
+				bottom: 38px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: radial-gradient(50% 50% at 50% 50%, #2f583f 0%, rgba(105, 105, 105, 0) 100%);
+				filter: blur(6.61818px);
+			}
+		}
+		display: block;
+		position: absolute;
+		top: -30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
 	}
 
 	&__title {
+		@extend %title;
+		margin-top: 60px;
 	}
 
 	&__description {
+		margin-top: 28px;
 	}
 
 	&__btn {
+		margin-top: 38px;
+		padding: 8px 20px;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 1.5;
+		border: 2px solid #7eb101;
+		border-radius: 30px;
+		background-color: var(--tert-bcgd);
+	}
+
+	&__extra {
+		margin-left: 24px;
+		line-height: 1.5;
+		color: var(--scnd-text);
+		&::after {
+			content: "";
+			margin-left: 3px;
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			vertical-align: text-top;
+			background-image: url(../img/icons/next-mini.svg);
+		}
 	}
 }
 .features {
 	&__item {
+		margin-top: 28px;
+		&:first-child::before {
+			content: "";
+			display: block;
+			width: 48px;
+			height: 48px;
+			background-image: url(../img/bcgd/delivery.svg);
+		}
+		&:last-child::before {
+			content: "";
+			display: block;
+			width: 48px;
+			height: 48px;
+			background-image: url(../img/bcgd/order.svg);
+		}
 	}
 
 	&__title {
+		margin-top: 8px;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.17;
 	}
 
 	&__description {
+		margin-top: 16px;
 	}
 }
 .favorites {
 	&__container {
+		@extend %container;
 	}
 
 	&__title {
@@ -83,6 +213,7 @@
 }
 .customers {
 	&__container {
+		@extend %container;
 	}
 
 	&__title {
@@ -119,6 +250,7 @@
 }
 .subscribe {
 	&__container {
+		@extend %container;
 	}
 
 	&__title {
@@ -138,6 +270,7 @@
 }
 .page-footer {
 	&__container {
+		@extend %container;
 	}
 
 	&__wrapper {

@@ -6,7 +6,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Enjoy Your Favorite Food From Anywhere</title>
 		<link rel="shortcut icon" type="image/svg" href="./img/favicon.svg" />
-		<link type="Image/x-icon" href="./img/favicon.svg" rel="icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+		/>
 		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
 	<body>
@@ -34,6 +40,11 @@
 						<a class="page-header__link" href="">Contact</a>
 					</li>
 				</nav>
+				<button class="page-header__menu-btn" type="button">
+					<svg class="page-header__menu-icon" width="28" height="28">
+						<use href="./img/sprite.svg#burger"></use>
+					</svg>
+				</button>
 				<button class="page-header__btn" type="button">Order Now</button>
 			</div>
 		</header>
@@ -52,7 +63,9 @@
 			</section>
 			<section class="offerings">
 				<div class="offerings__container">
-					<img class="offerings__image" src="" alt="" />
+					<div class="offerings__image-wrapper">
+						<img class="offerings__image" src="./img/content/apple.png" alt="" width="200" height="255" />
+					</div>
 					<h2 class="offerings__title">What’s Special About Our Offerings</h2>
 					<p class="offerings__description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
@@ -61,15 +74,20 @@
 					</p>
 					<ul class="features">
 						<li class="features__item">
-							<h3 class="features__title"></h3>
-							<p class="features__description"></p>
+							<h3 class="features__title">Fasest Delivery</h3>
+							<p class="features__description">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+							</p>
 						</li>
 						<li class="features__item">
-							<h3 class="features__title"></h3>
-							<p class="features__description"></p>
+							<h3 class="features__title">Easy to order</h3>
+							<p class="features__description">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+							</p>
 						</li>
 					</ul>
-					<button class="offerings__btn" type="button"></button>
+					<button class="offerings__btn" type="button">Order Now</button>
+					<a class="offerings__extra" href="#">Read More</a>
 				</div>
 			</section>
 			<section class="favorites">
@@ -116,7 +134,7 @@
 					<p class="customers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					<ul class="opinion__list">
 						<li class="opinion__item">
-							<svg class="opinion__rating">
+							<svg class="opinion__rating" width="17" height="16">
 								<use href=""></use>
 							</svg>
 							<h3 class="opinion__review">
@@ -130,7 +148,7 @@
 							</div>
 						</li>
 						<li class="opinion__item">
-							<svg class="opinion__rating">
+							<svg class="opinion__rating" width="17" height="16">
 								<use href=""></use>
 							</svg>
 							<h3 class="opinion__review">
@@ -164,8 +182,8 @@
 			<div class="page-footer__container">
 				<div class="page-footer__wrapper">
 					<a href="" class="page-footer__logo">
-						<svg class="page-footer__icon">
-							<use href=""></use>
+						<svg class="page-footer__icon" width="66" height="52">
+							<use href="./img/sprite.svg#logo"></use>
 						</svg>
 					</a>
 					<nav class="page-footer__nav">

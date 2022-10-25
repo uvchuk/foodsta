@@ -1,0 +1,57 @@
+body {
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.14;
+	color: var(--prim-text);
+	background-color: var(--prim-bcgd);
+}
+
+// @include mobile {
+// 	body {
+// 		&.locked {
+// 			overflow: hidden;
+// 		}
+// 		&.adaptive {
+// 			// lock scroll & real 100vh in iOS Safari
+// 			visibility: hidden;
+// 			overflow: hidden;
+// 			position: fixed;
+// 			width: 100%;
+// 			max-width: 480px;
+// 			height: 100%;
+// 			left: 50%;
+// 			transform: translateX(-50%);
+// 		}
+// 	}
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul,
+nav {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
