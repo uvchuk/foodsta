@@ -64,7 +64,17 @@
 			<section class="offerings">
 				<div class="offerings__container">
 					<div class="offerings__image-wrapper">
-						<img class="offerings__image" src="./img/content/apple.png" alt="" width="200" height="255" />
+						<picture class="offerings__image">
+							<source
+								srcset="./img/content/offering/apple.webp 1x, ./img/content/offering/apple@2x.webp 2x"
+								type="image/webp"
+							/>
+							<source
+								srcset="./img/content/offering/apple.png 1x, ./img/content/offering/apple@2x.png 2x"
+								type="image/png"
+							/>
+							<img src="./img/content/offering/apple.png" alt="Apple" width="200" height="255" />
+						</picture>
 					</div>
 					<h2 class="offerings__title">What’s Special About Our Offerings</h2>
 					<p class="offerings__description">
@@ -291,7 +301,12 @@
 							<div class="opinion__author-card">
 								<picture class="opinion__author-photo">
 									<source
+										srcset="./img/content/customers/author_1.webp 1x, ./img/content/customers/author_1@2x.webp 2x"
+										type="image/webp"
+									/>
+									<source
 										srcset="./img/content/customers/author_1.png 1x, ./img/content/customers/author_1@2x.png 2x"
+										type="image/png"
 									/>
 									<img
 										class="opinion__author-photo"
@@ -315,7 +330,12 @@
 							<div class="opinion__author-card">
 								<picture class="opinion__author-photo">
 									<source
+										srcset="./img/content/customers/author_2.webp 1x, ./img/content/customers/author_2@2x.webp 2x"
+										type="image/webp"
+									/>
+									<source
 										srcset="./img/content/customers/author_2.png 1x, ./img/content/customers/author_2@2x.png 2x"
+										type="image/png"
 									/>
 									<img
 										class="opinion__author-photo"

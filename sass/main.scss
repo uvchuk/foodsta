@@ -137,6 +137,10 @@
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 1;
+		@include mobile {
+			width: 200px;
+			height: 255px;
+		}
 	}
 
 	&__title {
@@ -344,8 +348,12 @@
 	}
 
 	&__image {
+		width: 280px;
+		height: 78px;
 		position: absolute;
 		top: -43px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	&__title {
