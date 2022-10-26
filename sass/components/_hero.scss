@@ -1,0 +1,31 @@
+.hero {
+	&__container {
+		@extend %container;
+		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 50px;
+		}
+	}
+
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		@include mobile {
+			margin-top: 28px;
+		}
+		line-height: 1.5;
+	}
+
+	&__btn {
+		@extend %btn, %btn-prim;
+		@include mobile {
+			margin-top: 28px;
+		}
+		padding: 6px 18px;
+	}
+
+	&__slider {
+	}
+}

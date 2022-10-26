@@ -1,0 +1,48 @@
+.favorites {
+	&__container {
+		@extend %container;
+		@extend %section;
+		text-align: center;
+	}
+
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		margin-top: 20px;
+	}
+
+	&__list {
+		display: flex;
+		@include mobile {
+			margin-top: 60px;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+		}
+	}
+
+	&__item {
+		@include mobile {
+			&:nth-last-child(-n + 3) {
+				display: none;
+			}
+			width: 280px;
+			height: 280px;
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		border: 11px solid var(--accent-scnd);
+		border-radius: 50%;
+	}
+
+	&__image {
+		@include mobile {
+			width: 225px;
+			height: 225px;
+		}
+	}
+}

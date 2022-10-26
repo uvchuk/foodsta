@@ -9,7 +9,7 @@
 		menuOpen.setAttribute("aria-expanded", !isMenuOpen);
 		mobileMenu.classList.toggle("is-open");
 		menuOpen.classList.toggle("is-open");
-		bodyLock.classList.toggle("adaptive");
+		bodyLock.classList.toggle("locked");
 	};
 
 	menuOpen.addEventListener("click", toggleMenu);
@@ -19,7 +19,7 @@
 		if (!e.matches) return;
 		mobileMenu.classList.remove("is-open");
 		menuOpen.classList.remove("is-open");
-		bodyLock.classList.remove("adaptive");
+		bodyLock.classList.remove("locked");
 		menuOpen.setAttribute("aria-expanded", false);
 	});
 })();

@@ -54,7 +54,7 @@
 						</svg>
 					</button>
 				</div>
-				<button class="page-header__btn-order" type="button">Order Now</button>
+				<button class="page-header__btn-order" type="button" data-modal-open>Order Now</button>
 			</div>
 		</header>
 		<main>
@@ -66,7 +66,7 @@
 						tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
 						erat.
 					</p>
-					<button class="hero__btn" type="button">Order Now</button>
+					<button class="hero__btn" type="button" data-toggle="modal">Order Now</button>
 					<div class="hero__slider"></div>
 				</div>
 			</section>
@@ -105,7 +105,7 @@
 							</p>
 						</li>
 					</ul>
-					<button class="offerings__btn" type="button">Order Now</button>
+					<button class="offerings__btn" type="button" data-toggle="modal">Order Now</button>
 					<a class="offerings__extra" href="#">Read More</a>
 				</div>
 			</section>
@@ -438,6 +438,25 @@
 				</div>
 			</div>
 		</footer>
+		<!-- Modal -->
+		<div class="backdrop" data-modal>
+			<div class="modal">
+				<button class="modal__btn-close" type="button" data-modal-close>
+					<svg class="modal__icon-close" width="24" height="24">
+						<use href="./img/sprite.svg#close"></use>
+					</svg>
+				</button>
+				<h3 class="modal__title">Order Form</h3>
+				<label class="modal__label">Name<input class="modal__input" type="text" placeholder="Your name" /></label>
+				<label class="modal__label"
+					>Phone number<input class="modal__input" type="tel" placeholder="+38(0_ _) _ _ _   _ _   _ _" />
+				</label>
+				<label class="modal__label"
+					>E-mail<input class="modal__input" type="email" placeholder="example@gmail.com" />
+				</label>
+				<button class="modal__btn-submit" type="submit">Send</button>
+			</div>
+		</div>
 		<!-- Scripts -->
 		<script src="./js/menu.js"></script>
 		<script src="./js/modal.js"></script>

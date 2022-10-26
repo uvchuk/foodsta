@@ -1,0 +1,85 @@
+.customers {
+	&__container {
+		@extend %container;
+		@extend %section;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: bottom;
+		@include mobile {
+			background-image: url(../img/bcgd/customers/customers_mobile.svg);
+		}
+	}
+
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		@include mobile {
+			margin-top: 20px;
+		}
+	}
+}
+
+.opinion {
+	&__list {
+		display: flex;
+		@include mobile {
+			margin-top: 32px;
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	&__item {
+		background-color: var(--tert-bcgd);
+		@include mobile {
+			padding: 8px;
+			border-top-right-radius: 30px;
+			border-bottom-right-radius: 30px;
+			border-bottom-left-radius: 30px;
+			&::before {
+				content: "";
+				display: block;
+				width: 100px;
+				height: 16px;
+				background-image: url(../img/icons/star.svg);
+				background-size: 20px 16px;
+			}
+		}
+	}
+
+	&__review {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1.18;
+		@include mobile {
+			margin-top: 28px;
+		}
+	}
+	&__author {
+		&-card {
+			margin-top: 40px;
+			width: 160px;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			border-right: 1px solid var(--btn-border);
+		}
+
+		&-photo {
+		}
+
+		&__info {
+		}
+
+		&-name {
+			font-weight: 500;
+			line-height: 1.5;
+		}
+
+		&-post {
+			line-height: 1.5;
+		}
+	}
+}

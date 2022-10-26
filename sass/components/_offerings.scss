@@ -1,0 +1,115 @@
+.offerings {
+	&__container {
+		@extend %container;
+		@include mobile {
+			padding-top: 70px;
+			padding-bottom: 60px;
+			background-image: url(../img/bcgd/offerings/offering_mobile.svg);
+		}
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+	}
+
+	&__image {
+		&-wrapper {
+			position: relative;
+			margin: 0 auto;
+			width: 280px;
+			height: 280px;
+			border: 3px solid rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			box-shadow: inset #ffe550 0 0 0 9px;
+			background-clip: content-box;
+			background-color: var(--prim-bcgd);
+			&::after {
+				content: "";
+				display: block;
+				width: 130px;
+				height: 45px;
+				position: absolute;
+				bottom: 38px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: radial-gradient(50% 50% at 50% 50%, #2f583f 0%, rgba(105, 105, 105, 0) 100%);
+				filter: blur(6.61818px);
+			}
+		}
+		display: block;
+		position: absolute;
+		top: -30px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+		@include mobile {
+			width: 200px;
+			height: 255px;
+		}
+	}
+
+	&__title {
+		@extend %title;
+		margin-top: 60px;
+	}
+
+	&__description {
+		margin-top: 28px;
+	}
+
+	&__btn {
+		@extend %btn, %btn-scnd;
+		margin-top: 38px;
+		padding: 8px 20px;
+	}
+
+	&__extra {
+		margin-left: 24px;
+		line-height: 1.5;
+		color: var(--scnd-text);
+		@include animated(color);
+		&::after {
+			content: "";
+			margin-left: 3px;
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			vertical-align: text-top;
+			background-image: url(../img/icons/next-mini.svg);
+		}
+		&:hover,
+		&:focus {
+			color: var(--accent);
+		}
+	}
+}
+
+.features {
+	&__item {
+		margin-top: 28px;
+		&:first-child::before {
+			content: "";
+			display: block;
+			width: 48px;
+			height: 48px;
+			background-image: url(../img/content/offering/delivery.svg);
+		}
+		&:last-child::before {
+			content: "";
+			display: block;
+			width: 48px;
+			height: 48px;
+			background-image: url(../img/content/offering/order.svg);
+		}
+	}
+
+	&__title {
+		margin-top: 8px;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.17;
+	}
+
+	&__description {
+		margin-top: 16px;
+	}
+}

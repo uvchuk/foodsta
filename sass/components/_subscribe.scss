@@ -1,0 +1,40 @@
+.subscribe {
+	&__container {
+		@extend %container;
+		@extend %section;
+		position: relative;
+	}
+
+	&__image {
+		width: 280px;
+		height: 78px;
+		position: absolute;
+		top: -43px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		margin-top: 20px;
+	}
+
+	&__form {
+		margin-top: 40px;
+	}
+
+	&__input {
+		@extend %input;
+	}
+
+	&__btn {
+		margin-top: 20px;
+		@extend %btn, %btn-prim;
+		padding: 11px 22px;
+		display: block;
+		margin-left: auto;
+	}
+}
