@@ -15,7 +15,7 @@
 		/>
 		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
-	<body>
+	<body data-body-lock>
 		<header class="page-header">
 			<div class="page-header__container">
 				<a href="./index.html" class="page-header__logo">
@@ -23,29 +23,38 @@
 						<use href="./img/sprite.svg#logo"></use>
 					</svg>
 				</a>
-				<nav class="page-header__nav">
-					<li class="page-header__item">
-						<a class="page-header__link" href="">Home</a>
-					</li>
-					<li class="page-header__item">
-						<a class="page-header__link" href="">About</a>
-					</li>
-					<li class="page-header__item">
-						<a class="page-header__link" href="">Service</a>
-					</li>
-					<li class="page-header__item">
-						<a class="page-header__link" href="">Menu</a>
-					</li>
-					<li class="page-header__item">
-						<a class="page-header__link" href="">Contact</a>
-					</li>
-				</nav>
-				<button class="page-header__menu-btn" type="button">
-					<svg class="page-header__menu-icon" width="28" height="28">
-						<use href="./img/sprite.svg#burger"></use>
-					</svg>
-				</button>
-				<button class="page-header__btn" type="button">Order Now</button>
+				<div class="page-header__menu">
+					<nav class="page-header__nav" data-menu>
+						<ul class="page-header__list">
+							<li class="page-header__item">
+								<a class="page-header__link" href="">Home</a>
+							</li>
+							<li class="page-header__item">
+								<a class="page-header__link" href="">About</a>
+							</li>
+							<li class="page-header__item">
+								<a class="page-header__link" href="">Service</a>
+							</li>
+							<li class="page-header__item">
+								<a class="page-header__link" href="">Menu</a>
+							</li>
+							<li class="page-header__item">
+								<a class="page-header__link" href="">Contact</a>
+							</li>
+						</ul>
+						<button class="page-header__btn-close" type="button" data-menu-close>
+							<svg class="page-header__icon-close" width="24" height="24">
+								<use href="./img/sprite.svg#close"></use>
+							</svg>
+						</button>
+					</nav>
+					<button class="page-header__btn-open" type="button" data-menu-open>
+						<svg class="page-header__icon-open" width="28" height="28">
+							<use href="./img/sprite.svg#burger"></use>
+						</svg>
+					</button>
+				</div>
+				<button class="page-header__btn-order" type="button">Order Now</button>
 			</div>
 		</header>
 		<main>
@@ -372,7 +381,7 @@
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
 						tristique.
 					</p>
-					<form class="subscribe__form" action="">
+					<form class="subscribe__form">
 						<input class="subscribe__input" type="email" placeholder="Enter your email" />
 						<button class="subscribe__btn" type="submit">Subscribe</button>
 					</form>
@@ -389,24 +398,26 @@
 							</svg>
 						</a>
 						<nav class="page-footer__nav">
-							<li class="page-footer__item">
-								<a class="page-footer__link" href="">Home</a>
-							</li>
-							<li class="page-footer__item">
-								<a class="page-footer__link" href="">About</a>
-							</li>
-							<li class="page-footer__item">
-								<a class="page-footer__link" href="">Service</a>
-							</li>
-							<li class="page-footer__item">
-								<a class="page-footer__link" href="">Menu</a>
-							</li>
-							<li class="page-footer__item">
-								<a class="page-footer__link" href="">Contact</a>
-							</li>
+							<ul class="page-footer__list">
+								<li class="page-footer__item">
+									<a class="page-footer__link" href="">Home</a>
+								</li>
+								<li class="page-footer__item">
+									<a class="page-footer__link" href="">About</a>
+								</li>
+								<li class="page-footer__item">
+									<a class="page-footer__link" href="">Service</a>
+								</li>
+								<li class="page-footer__item">
+									<a class="page-footer__link" href="">Menu</a>
+								</li>
+								<li class="page-footer__item">
+									<a class="page-footer__link" href="">Contact</a>
+								</li>
+							</ul>
 						</nav>
 					</div>
-					<form class="page-footer__form" action="">
+					<form class="page-footer__form">
 						<label class="page-footer__label">
 							Subscribe
 							<input class="page-footer__input" type="email" placeholder="Enter your email" />
@@ -427,5 +438,8 @@
 				</div>
 			</div>
 		</footer>
+		<!-- Scripts -->
+		<script src="./js/menu.js"></script>
+		<script src="./js/modal.js"></script>
 	</body>
 </html>

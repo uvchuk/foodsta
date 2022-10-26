@@ -1,7 +1,7 @@
 @import "./utils/variables";
-@import "./utils/base";
 @import "./utils/mixins";
 @import "./utils/placeholders";
+@import "./utils/base";
 
 .page-header {
 	&__container {
@@ -12,6 +12,8 @@
 		box-shadow: 0px 4px 24px rgba(105, 105, 105, 0.1);
 		@include mobile {
 			justify-content: space-between;
+			align-items: center;
+			position: relative;
 		}
 	}
 
@@ -22,9 +24,24 @@
 		display: block;
 	}
 
+	&__menu {
+	}
+
 	&__nav {
 		@include mobile {
 			display: none;
+			&.is-open {
+				display: block;
+				width: 130px;
+				height: 255px;
+				position: absolute;
+				top: 50px;
+				right: 20px;
+				box-shadow: 0px 4px 24px rgba(105, 105, 105, 0.1);
+				border-radius: 30px 0px 30px 30px;
+				overflow: hidden;
+				background-color: var(--prim-bcgd);
+			}
 		}
 	}
 
@@ -32,30 +49,49 @@
 	}
 
 	&__link {
-	}
-	&__menu {
-		&-btn {
-			@include mobile {
-				@include animated(fill);
-				display: inline-block;
-				border: none;
-				cursor: pointer;
-				background-color: transparent;
-				fill: var(--btn-border);
-				&:hover,
-				&:focus,
-				&:active {
-					fill: var(--accent-scnd);
-				}
+		@include mobile {
+			@include animated;
+			display: inline-block;
+			width: 100%;
+			padding: 16px;
+			font-size: 16px;
+			line-height: 1.19;
+			color: var(--scnd-text);
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: var(--accent);
 			}
-			display: none;
 		}
-		&-icon {
-			display: block;
+	}
+	&__btn-open {
+		@extend %btn-menu;
+		@include mobile {
+			display: inline-block;
 		}
+		display: none;
+	}
+	&__icon-open {
+		display: block;
 	}
 
-	&__btn {
+	&__btn-close {
+		@extend %btn-menu;
+		@include mobile {
+			display: inline-block;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+		}
+		fill: var(--scnd-text);
+		display: none;
+	}
+
+	&__icon-close {
+		display: block;
+	}
+
+	&__btn-order {
 		@include mobile {
 			display: none;
 		}
@@ -289,7 +325,7 @@
 	}
 
 	&__item {
-		background-color: var(--btn-bcgd);
+		background-color: var(--tert-bcgd);
 		@include mobile {
 			padding: 8px;
 			border-top-right-radius: 30px;

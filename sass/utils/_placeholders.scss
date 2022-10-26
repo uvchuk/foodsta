@@ -30,6 +30,18 @@
 	line-height: 1.5;
 	border-radius: 30px;
 	cursor: pointer;
+	&-menu {
+		border: none;
+		cursor: pointer;
+		background-color: transparent;
+		fill: var(--btn-border);
+		@include animated(fill);
+		&:hover,
+		&:focus,
+		&:active {
+			fill: var(--accent-scnd);
+		}
+	}
 	&-prim {
 		@include animated;
 		border: none;
@@ -42,7 +54,7 @@
 	&-scnd {
 		@include animated(border-color);
 		border: 2px solid var(--btn-border);
-		background-color: var(--btn-bcgd);
+		background-color: var(--tert-bcgd);
 		&:hover,
 		&:focus {
 			border-color: var(--btn-border-focus);
@@ -51,7 +63,7 @@
 	&-tert {
 		@include animated;
 		border: 1px solid var(--btn-border);
-		background-color: var(--btn-bcgd);
+		background-color: var(--tert-bcgd);
 		&:hover,
 		&:focus {
 			background-color: var(--accent-scnd);
