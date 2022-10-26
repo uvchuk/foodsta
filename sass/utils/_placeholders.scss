@@ -28,14 +28,34 @@
 	font-weight: 500;
 	font-size: 13px;
 	line-height: 1.5;
-	border: none;
 	border-radius: 30px;
-	background-color: transparent;
 	cursor: pointer;
-	@include animated;
-	&:hover,
-	&:focus {
-		background-color: var(--focus);
+	&-prim {
+		@include animated;
+		border: none;
+		background-color: var(--accent);
+		&:hover,
+		&:focus {
+			background-color: var(--btn-bcgd-focus);
+		}
+	}
+	&-scnd {
+		@include animated(border-color);
+		border: 2px solid var(--btn-border);
+		background-color: var(--btn-bcgd);
+		&:hover,
+		&:focus {
+			border-color: var(--btn-border-focus);
+		}
+	}
+	&-tert {
+		@include animated;
+		border: 1px solid var(--btn-border);
+		background-color: var(--btn-bcgd);
+		&:hover,
+		&:focus {
+			background-color: var(--accent-scnd);
+		}
 	}
 }
 
@@ -44,6 +64,21 @@
 	font-weight: 700;
 	font-size: 28px;
 	line-height: 1.18;
+}
+
+%input {
+	outline: none;
+	border: 1px solid var(--accent-scnd);
+	border-radius: 30px;
+	@include mobile {
+		padding-left: 10px;
+		width: 100%;
+		height: 42px;
+	}
+	&::placeholder {
+		font-size: 12px;
+		line-height: 1.5;
+	}
 }
 
 %visuality-hidden {
