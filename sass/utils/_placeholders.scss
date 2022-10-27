@@ -74,8 +74,16 @@
 %title {
 	font-style: normal;
 	font-weight: 700;
-	font-size: 28px;
 	line-height: 1.18;
+	@include mobile {
+		font-size: 28px;
+	}
+	@include tablet {
+		font-size: 42px;
+	}
+	@include desktop {
+		font-size: 42px;
+	}
 }
 
 %input {
@@ -93,7 +101,7 @@
 	}
 }
 
-%visuality-hidden {
+%vs-hidden {
 	position: absolute;
 	width: 1px;
 	height: 1px;

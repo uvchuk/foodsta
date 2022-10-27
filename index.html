@@ -60,53 +60,121 @@
 		<main>
 			<section class="hero">
 				<div class="hero__container">
-					<h1 class="hero__title">Enjoy Your Favorite Food From Anywhere</h1>
-					<p class="hero__description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-						tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
-						erat.
-					</p>
-					<button class="hero__btn" type="button" data-toggle="modal">Order Now</button>
+					<div class="hero__content">
+						<h1 class="hero__title">Enjoy Your Favorite Food From Anywhere</h1>
+						<p class="hero__description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+							erat.
+						</p>
+						<button class="hero__btn" type="button" data-toggle="modal">Order Now</button>
+					</div>
 					<div class="hero__slider"></div>
 				</div>
 			</section>
 			<section class="offerings">
 				<div class="offerings__container">
-					<div class="offerings__image-wrapper">
-						<picture class="offerings__image">
-							<source
-								srcset="./img/content/offering/apple.webp 1x, ./img/content/offering/apple@2x.webp 2x"
-								type="image/webp"
-							/>
-							<source
-								srcset="./img/content/offering/apple.png 1x, ./img/content/offering/apple@2x.png 2x"
-								type="image/png"
-							/>
-							<img src="./img/content/offering/apple.png" alt="Apple" width="200" height="255" />
-						</picture>
+					<div class="offerings__images">
+						<div class="offerings__main-wrapper">
+							<picture class="offerings__main-image">
+								<source
+									srcset="
+										./img/content/offering/aple_mobile.webp     200w,
+										./img/content/offering/aple_tablet.webp     260w,
+										./img/content/offering/aple_tablet@2x.webp  520w,
+										./img/content/offering/aple_desktop.webp    400w,
+										./img/content/offering/aple_desktop@2x.webp 800w
+									"
+									sizes="(min-width: 1280px) 400px, (min-width: 768px) 260px, (max-width: 767px) 200px, 100vw"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./img/content/offering/aple_mobile.png     200w,
+										./img/content/offering/aple_tablet.png     260w,
+										./img/content/offering/aple_tablet@2x.png  520w,
+										./img/content/offering/aple_desktop.png    400w,
+										./img/content/offering/aple_desktop@2x.png 800w
+									"
+									sizes="(min-width: 1280px) 400px, (min-width: 768px) 260px, (max-width: 767px) 200px, 100vw"
+									type="image/png"
+								/>
+								<img src="./img/content/offering/aple_mobile.png" alt="Apple" width="200" height="255" />
+							</picture>
+						</div>
+						<div class="offerings__scnd-wrapper">
+							<picture class="offerings__scnd-image">
+								<source
+									srcset="
+										./img/content/offering/aple_middle_tablet.webp    1x,
+										./img/content/offering/aple_middle_tablet@2x.webp 2x
+									"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./img/content/offering/aple_middle_tablet.png    1x,
+										./img/content/offering/aple_middle_tablet@2x.png 2x
+									"
+									type="image/png"
+								/>
+								<img
+									src="./img/content/offering/aple_middle_tablet.png"
+									alt="Apple"
+									width="165"
+									height="210"
+									loading="lazy"
+								/>
+							</picture>
+							<picture class="offerings__scnd-image">
+								<source
+									srcset="
+										./img/content/offering/aple_small_tablet.webp    1x,
+										./img/content/offering/aple_small_tablet@2x.webp 2x
+									"
+									type="image/webp"
+								/>
+								<source
+									srcset="
+										./img/content/offering/aple_small_tablet.png    1x,
+										./img/content/offering/aple_small_tablet@2x.png 2x
+									"
+									type="image/png"
+								/>
+								<img
+									src="./img/content/offering/aple_small_tablet.png"
+									alt="Apple"
+									width="110"
+									height="135"
+									loading="lazy"
+								/>
+							</picture>
+						</div>
 					</div>
-					<h2 class="offerings__title">What’s Special About Our Offerings</h2>
-					<p class="offerings__description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-						tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
-						erat.
-					</p>
-					<ul class="features">
-						<li class="features__item">
-							<h3 class="features__title">Fasest Delivery</h3>
-							<p class="features__description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
-							</p>
-						</li>
-						<li class="features__item">
-							<h3 class="features__title">Easy to order</h3>
-							<p class="features__description">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
-							</p>
-						</li>
-					</ul>
-					<button class="offerings__btn" type="button" data-toggle="modal">Order Now</button>
-					<a class="offerings__extra" href="#">Read More</a>
+					<div class="offerings__content">
+						<h2 class="offerings__title">What’s Special About Our Offerings</h2>
+						<p class="offerings__description">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+							tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae
+							erat.
+						</p>
+						<ul class="features__list">
+							<li class="features__item">
+								<h3 class="features__title">Fasest Delivery</h3>
+								<p class="features__description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+								</p>
+							</li>
+							<li class="features__item">
+								<h3 class="features__title">Easy to order</h3>
+								<p class="features__description">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+								</p>
+							</li>
+						</ul>
+						<button class="offerings__btn" type="button" data-toggle="modal">Order Now</button>
+						<a class="offerings__extra" href="#">Read More</a>
+					</div>
 				</div>
 			</section>
 			<section class="favorites">
@@ -447,18 +515,21 @@
 					</svg>
 				</button>
 				<h3 class="modal__title">Order Form</h3>
-				<label class="modal__label">
-					<span class="modal__label-name">Name</span><input class="modal__input" type="text" placeholder="Your name" />
-				</label>
-				<label class="modal__label">
-					<span class="modal__label-name">Phone number</span>
-					<input class="modal__input" type="tel" placeholder="+38(0_ _) _ _ _   _ _   _ _" />
-				</label>
-				<label class="modal__label">
-					<span class="modal__label-name">E-mail</span>
-					<input class="modal__input" type="email" placeholder="example@gmail.com" />
-				</label>
-				<button class="modal__btn-submit" type="submit">Send</button>
+				<form>
+					<label class="modal__form">
+						<span class="modal__label">Name</span>
+						<input class="modal__input" type="text" placeholder="Your name" required />
+					</label>
+					<label class="modal__form">
+						<span class="modal__label">Phone number</span>
+						<input class="modal__input" type="tel" placeholder="+38(0_ _) _ _ _   _ _   _ _" required />
+					</label>
+					<label class="modal__form">
+						<span class="modal__label">E-mail</span>
+						<input class="modal__input" type="email" placeholder="example@gmail.com" required />
+					</label>
+					<button class="modal__btn-submit" type="submit">Send</button>
+				</form>
 			</div>
 		</div>
 		<!-- Scripts -->

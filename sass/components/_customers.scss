@@ -3,10 +3,17 @@
 		@extend %container;
 		@extend %section;
 		background-repeat: no-repeat;
-		background-size: cover;
 		background-position: bottom;
 		@include mobile {
-			background-image: url(../img/bcgd/customers/customers_mobile.svg);
+			background-image: url(../img/bcgd/customers/customers_bcgd_mobile.svg);
+			background-size: cover;
+		}
+		@include tablet {
+			background-image: url(../img/bcgd/customers/customers_bcgd_tablet.svg);
+		}
+		@include desktop {
+			background-image: url(../img/bcgd/customers/customers_bcgd_desktop.svg);
+			background-size: 100% 100%;
 		}
 	}
 

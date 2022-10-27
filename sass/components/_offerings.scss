@@ -1,64 +1,159 @@
 .offerings {
+	@include tablet {
+		position: relative;
+		top: -105px;
+	}
 	&__container {
 		@extend %container;
 		@include mobile {
 			padding-top: 70px;
 			padding-bottom: 60px;
-			background-image: url(../img/bcgd/offerings/offering_mobile.svg);
+			background-image: url(../img/bcgd/offerings/offerings_bcgd_mobile.svg);
+		}
+		@include tablet {
+			position: relative;
+			padding-top: 190px;
+			padding-bottom: 100px;
+			background-image: url(../img/bcgd/offerings/offerings_bcgd_tablet.svg);
+		}
+		@include desktop {
+			display: flex;
+			padding-top: 230px;
+			padding-bottom: 45px;
+			background-image: url(../img/bcgd/offerings/offerings_bcgd_desktop.svg);
 		}
 		background-repeat: no-repeat;
 		background-position: top;
-		background-size: cover;
+		background-size: 100% 100%;
 	}
 
-	&__image {
+	// Images
+
+	&__main {
+		&-image {
+			display: block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 1;
+			@include mobile {
+				width: 200px;
+				height: 255px;
+				top: -30px;
+			}
+			@include tablet {
+				width: 260px;
+				height: 325px;
+				top: -37px;
+			}
+			@include desktop {
+				width: 400px;
+				height: 500px;
+				top: -54px;
+			}
+		}
 		&-wrapper {
+			@include mobile {
+				margin: 0 auto;
+				width: 280px;
+				height: 280px;
+				box-shadow: inset #ffe550 0 0 0 9px;
+			}
+			@include tablet {
+				width: 360px;
+				height: 360px;
+				box-shadow: inset #ffe550 0 0 0 12px;
+			}
+			@include desktop {
+				width: 550px;
+				height: 550px;
+				box-shadow: inset #ffe550 0 0 0 21px;
+			}
 			position: relative;
-			margin: 0 auto;
-			width: 280px;
-			height: 280px;
 			border: 3px solid rgba(255, 255, 255, 0.5);
 			border-radius: 50%;
-			box-shadow: inset #ffe550 0 0 0 9px;
 			background-clip: content-box;
 			background-color: var(--prim-bcgd);
 			&::after {
+				@include mobile {
+					width: 130px;
+					height: 45px;
+					bottom: 38px;
+				}
+				@include tablet {
+					width: 165px;
+					height: 60px;
+					bottom: 48px;
+				}
+				@include desktop {
+					width: 250px;
+					height: 90px;
+					bottom: 75px;
+				}
 				content: "";
 				display: block;
-				width: 130px;
-				height: 45px;
 				position: absolute;
-				bottom: 38px;
 				left: 50%;
 				transform: translateX(-50%);
 				background: radial-gradient(50% 50% at 50% 50%, #2f583f 0%, rgba(105, 105, 105, 0) 100%);
 				filter: blur(6.61818px);
 			}
 		}
-		display: block;
-		position: absolute;
-		top: -30px;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 1;
-		@include mobile {
-			width: 200px;
-			height: 255px;
+	}
+
+	&__scnd {
+		&-image {
+			display: none;
+			@include tablet {
+				display: block;
+				position: absolute;
+				&:first-child {
+					width: 165px;
+					height: 210px;
+					top: 265px;
+					left: 420px;
+				}
+				&:last-child {
+					width: 110px;
+					height: 135px;
+					top: 340px;
+					left: 630px;
+				}
+			}
+		}
+	}
+
+	&__content {
+		@include desktop {
+			width: 575px;
+			margin-left: 90px;
 		}
 	}
 
 	&__title {
 		@extend %title;
-		margin-top: 60px;
+		@include mobile {
+			margin-top: 60px;
+		}
+		@include tablet {
+			margin-top: 60px;
+			width: 500px;
+		}
 	}
 
 	&__description {
-		margin-top: 28px;
+		@include mobile {
+			margin-top: 28px;
+		}
+		@include tablet {
+			margin-top: 20px;
+			width: 500px;
+		}
 	}
 
 	&__btn {
 		@extend %btn, %btn-scnd;
-		margin-top: 38px;
+		margin-top: 40px;
 		padding: 8px 20px;
 	}
 
@@ -84,8 +179,24 @@
 }
 
 .features {
+	&__list {
+		@include tablet {
+			display: flex;
+			margin-top: 40px;
+			gap: 115px;
+		}
+		@include desktop {
+			display: flex;
+		}
+	}
+
 	&__item {
-		margin-top: 28px;
+		@include mobile {
+			margin-top: 28px;
+		}
+		@include tablet {
+			width: 252px;
+		}
 		&:first-child::before {
 			content: "";
 			display: block;
@@ -110,6 +221,14 @@
 	}
 
 	&__description {
+		@include tablet {
+			font-size: 14px;
+			line-height: 1.14;
+		}
+		@include desktop {
+			font-size: 14px;
+			line-height: 1.5;
+		}
 		margin-top: 16px;
 	}
 }

@@ -4,10 +4,10 @@
 		padding-top: 10px;
 		padding-bottom: 10px;
 		display: flex;
+		align-items: center;
 		box-shadow: 0px 4px 24px rgba(105, 105, 105, 0.1);
 		@include mobile {
 			justify-content: space-between;
-			align-items: center;
 			position: relative;
 		}
 	}
@@ -20,6 +20,9 @@
 	}
 
 	&__menu {
+		@include tablet {
+			margin-left: auto;
+		}
 	}
 
 	&__nav {
@@ -41,13 +44,20 @@
 		}
 	}
 
+	&__list {
+		@include tablet {
+			display: flex;
+			align-items: center;
+			gap: 28px;
+		}
+	}
+
 	&__item {
 	}
 
 	&__link {
+		display: inline-block;
 		@include mobile {
-			@include animated;
-			display: inline-block;
 			width: 100%;
 			padding: 16px;
 			font-size: 16px;
@@ -58,6 +68,19 @@
 			&:active {
 				background-color: var(--accent);
 			}
+			@include animated;
+		}
+		@include tablet {
+			padding-top: 18px;
+			padding-bottom: 18px;
+			color: var(--scnd-text);
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--accent);
+				text-decoration: underline;
+			}
+			@include animated(color);
 		}
 	}
 	&__btn-open {
@@ -92,6 +115,7 @@
 			display: none;
 		}
 		@extend %btn, %btn-prim;
-		display: inline-block;
+		margin-left: 30px;
+		padding: 6px 18px;
 	}
 }

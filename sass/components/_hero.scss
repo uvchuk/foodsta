@@ -5,23 +5,56 @@
 			padding-top: 60px;
 			padding-bottom: 50px;
 		}
+		@include tablet {
+			padding-top: 60px;
+			padding-bottom: 73px;
+		}
+		@include desktop {
+			padding-top: 160px;
+		}
+	}
+
+	&__content {
+		@include desktop {
+			width: 500px;
+		}
 	}
 
 	&__title {
 		@extend %title;
+		@include tablet {
+			width: 480px;
+		}
+		@include desktop {
+			font-size: 48px;
+			line-height: 1.2;
+		}
 	}
 
 	&__description {
 		@include mobile {
 			margin-top: 28px;
+			line-height: 1.5;
 		}
-		line-height: 1.5;
+		@include tablet {
+			margin-top: 45px;
+			width: 340px;
+		}
+		@include desktop {
+			margin-top: 28px;
+		}
 	}
 
 	&__btn {
 		@extend %btn, %btn-prim;
 		@include mobile {
 			margin-top: 28px;
+		}
+		@include tablet {
+			margin-top: 40px;
+		}
+		@include desktop {
+			margin-top: 40px;
 		}
 		padding: 6px 18px;
 	}
