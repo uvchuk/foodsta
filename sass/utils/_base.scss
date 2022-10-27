@@ -12,18 +12,19 @@ body {
 	body {
 		&.locked {
 			overflow: hidden;
+			pointer-events: none;
 		}
-		// 		&.adaptive {
-		// 			// lock scroll & real 100vh in iOS Safari
-		// 			visibility: hidden;
-		// 			overflow: hidden;
-		// 			position: fixed;
-		// 			width: 100%;
-		// 			max-width: 480px;
-		// 			height: 100%;
-		// 			left: 50%;
-		// 			transform: translateX(-50%);
-		// 		}
+		&.adaptive {
+			// lock scroll & real 100vh in iOS Safari
+			// visibility: hidden;
+			// overflow: hidden;
+			// position: fixed;
+			// width: 100%;
+			// max-width: 480px;
+			// height: 100%;
+			// left: 50%;
+			// transform: translateX(-50%);
+		}
 	}
 }
 

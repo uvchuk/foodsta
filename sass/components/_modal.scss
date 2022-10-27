@@ -1,39 +1,111 @@
 .backdrop {
-	display: none;
+	// display: none;
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 1250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1250ms cubic-bezier(0.4, 0, 0.2, 1);
 	&.is-open {
-		display: block;
-		position: fixed;
-		top: 0;
-		left: 0;
+		// display: block;
+		visibility: visible;
+		pointer-events: all;
+		overflow: auto;
+		opacity: 1;
 		width: 100vw;
 		height: 100vh;
-		transition: opacity 1250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 1250ms cubic-bezier(0.4, 0, 0.2, 1);
-		overflow: auto;
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		left: 0;
 		background-color: var(--backdrop);
 	}
 }
 .modal {
+	position: absolute;
+	max-width: 460px;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+	border-radius: 30px;
+	text-align: center;
 	background-color: var(--accent-scnd);
 	@include mobile {
-		padding: 20px 32px;
-		width: 100%;
+		padding: 32px 20px;
+		top: 60px;
+	}
+	.backdrop.is-open & {
+		opacity: 1;
 	}
 	&__btn-close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		border: none;
+		border-radius: 50%;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+		background-color: var(--tert-bcgd);
 	}
 
 	&__icon-close {
+		box-sizing: content-box;
+		display: block;
+		padding: 4px;
+		.modal__btn-close:hover &,
+		.modal__btn-close:focus & {
+			fill: var(--accent);
+		}
+		@include animated(fill);
 	}
 
 	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 1.21;
 	}
 
 	&__label {
+		display: block;
+		margin-top: 24px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.38;
+		text-align: left;
+		&-name {
+			margin-left: 12px;
+		}
 	}
 
 	&__input {
+		margin-top: 2px;
+		padding-left: 12px;
+		height: 48px;
+		width: 100%;
+		font-size: 16px;
+		line-height: 1.25;
+		outline: none;
+		border-radius: 30px;
+		border: 1px solid rgba(18, 18, 18, 0.12);
+		box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.15);
+		&::placeholder {
+			color: var(--placeholder);
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: var(--border-color);
+		}
+		@include animated(border-color);
 	}
 
 	&__btn-submit {
+		@extend %btn, %btn-scnd;
+		margin-top: 42px;
+		padding: 8px 36px;
+		&:hover,
+		&:focus {
+			background-color: var(--accent);
+		}
+		@include animated;
 	}
 }
 
