@@ -435,14 +435,30 @@
 				<div class="subscribe__container">
 					<picture class="subscribe__image">
 						<source
-							srcset="./img/content/subscribe/banan.webp 1x, ./img/content/subscribe/banan@2x.webp 2x"
+							srcset="
+								./img/content/subscribe/banan_mobile.webp      160w,
+								./img/content/subscribe/banan_mobile@2x.webp   320w,
+								./img/content/subscribe/banan_tablet.webp      280w,
+								./img/content/subscribe/banan_tablet@2x.webp   560w,
+								./img/content/subscribe/banan_desktop.webp     545w,
+								./img/content/subscribe/banan_desktop@2x.webp 1090w
+							"
 							type="image/webp"
+							sizes="(min-width: 1280px) 545px, (min-width: 768px) 280px, (max-width: 767px) 160px, 100vw"
 						/>
 						<source
-							srcset="./img/content/subscribe/banan.png 1x, ./img/content/subscribe/banan@2x.png 2x"
+							srcset="
+								./img/content/subscribe/banan_mobile.png      160w,
+								./img/content/subscribe/banan_mobile@2x.png   320w,
+								./img/content/subscribe/banan_tablet.png      280w,
+								./img/content/subscribe/banan_tablet@2x.png   560w,
+								./img/content/subscribe/banan_desktop.png     545w,
+								./img/content/subscribe/banan_desktop@2x.png 1090w
+							"
 							type="image/png"
+							sizes="(min-width: 1280px) 545px, (min-width: 768px) 280px, (max-width: 767px) 160px, 100vw"
 						/>
-						<img src="./img/content/subscribe/banan.png" alt="Banan" width="280" height="78" />
+						<img src="./img/content/subscribe/banan_mobile.png" alt="Banan" width="160" height="78" />
 					</picture>
 					<h2 class="subscribe__title">Subscribe To Get Special Offers</h2>
 					<p class="subscribe__description">
@@ -486,8 +502,8 @@
 						</nav>
 					</div>
 					<form class="page-footer__form">
-						<label class="page-footer__label">
-							Subscribe
+						<label>
+							<span class="page-footer__label">Subscribe</span>
 							<input class="page-footer__input" type="email" placeholder="Enter your email" />
 						</label>
 						<button class="page-footer__btn" type="submit">Subscribe</button>

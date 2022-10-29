@@ -1,17 +1,36 @@
 .subscribe {
 	&__container {
 		@extend %container;
-		@extend %section;
+		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		@include tablet {
+			padding-top: 80px;
+			padding-bottom: 100px;
+		}
 		position: relative;
 	}
 
 	&__image {
-		width: 280px;
-		height: 78px;
 		position: absolute;
-		top: -43px;
-		left: 50%;
-		transform: translateX(-50%);
+		@include mobile {
+			width: 160px;
+			height: 78px;
+			top: -43px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@include tablet {
+			width: 280px;
+			height: 135px;
+			left: 455px;
+			top: -73px;
+		}
+		@include desktop {
+			width: 610px;
+			height: 265px;
+		}
 	}
 
 	&__title {
@@ -20,21 +39,41 @@
 
 	&__description {
 		margin-top: 20px;
+		@include tablet {
+			line-height: 1.5;
+		}
 	}
 
 	&__form {
-		margin-top: 40px;
+		@include mobile {
+			margin-top: 40px;
+		}
+		@include tablet {
+			margin-top: 24px;
+		}
 	}
 
 	&__input {
 		@extend %input;
+		@include mobile {
+			width: 100%;
+		}
+		@include tablet {
+			width: 395px;
+		}
 	}
 
 	&__btn {
-		margin-top: 20px;
+		@include mobile {
+			margin-top: 20px;
+			display: block;
+			margin-left: auto;
+		}
+		@include tablet {
+			display: inline-block;
+			margin-left: 22px;
+		}
 		@extend %btn, %btn-prim;
 		padding: 11px 22px;
-		display: block;
-		margin-left: auto;
 	}
 }

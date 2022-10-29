@@ -1,7 +1,14 @@
 .favorites {
 	&__container {
 		@extend %container;
-		@extend %section;
+		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		@include tabletPlus {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
 		text-align: center;
 	}
 
@@ -10,16 +17,29 @@
 	}
 
 	&__description {
+		@include tablet {
+			line-height: 1.19;
+		}
 		margin-top: 20px;
 	}
 
 	&__list {
 		display: flex;
+		align-items: center;
 		@include mobile {
 			margin-top: 60px;
 			flex-direction: column;
-			align-items: center;
 			gap: 20px;
+		}
+		@include tablet {
+			margin-top: 60px;
+		}
+		@include tabletPlus {
+			flex-wrap: wrap;
+			gap: 32px;
+		}
+		@include desktop {
+			margin-top: 40px;
 		}
 	}
 
@@ -30,12 +50,23 @@
 			}
 			width: 280px;
 			height: 280px;
+			border: 11px solid var(--accent-scnd);
+		}
+		@include tablet {
+			width: 336px;
+			height: 338px;
+			border: 14px solid var(--accent-scnd);
+		}
+
+		@include desktop {
+			width: 394px;
+			height: 397px;
+			border: 16px solid var(--accent-scnd);
 		}
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
-		border: 11px solid var(--accent-scnd);
 		border-radius: 50%;
 	}
 
@@ -43,6 +74,14 @@
 		@include mobile {
 			width: 225px;
 			height: 225px;
+		}
+		@include tablet {
+			width: 270px;
+			height: 270px;
+		}
+		@include desktop {
+			width: 315px;
+			height: 315px;
 		}
 	}
 }

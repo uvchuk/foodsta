@@ -20,7 +20,7 @@
 	}
 
 	&__menu {
-		@include tablet {
+		@include tabletPlus {
 			margin-left: auto;
 		}
 	}
@@ -45,7 +45,7 @@
 	}
 
 	&__list {
-		@include tablet {
+		@include tabletPlus {
 			display: flex;
 			align-items: center;
 			gap: 28px;
@@ -63,16 +63,16 @@
 			font-size: 16px;
 			line-height: 1.19;
 			color: var(--scnd-text);
-			&:hover,
-			&:focus,
 			&:active {
 				background-color: var(--accent);
 			}
 			@include animated;
 		}
-		@include tablet {
+		@include tabletPlus {
 			padding-top: 18px;
 			padding-bottom: 18px;
+			font-size: 14px;
+			line-height: 1.14;
 			color: var(--scnd-text);
 			&:hover,
 			&:focus,

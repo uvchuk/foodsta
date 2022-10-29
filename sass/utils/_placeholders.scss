@@ -87,14 +87,11 @@
 }
 
 %input {
+	height: 42px;
+	padding-left: 10px;
 	outline: none;
 	border: 1px solid var(--accent-scnd);
 	border-radius: 30px;
-	@include mobile {
-		padding-left: 10px;
-		width: 100%;
-		height: 42px;
-	}
 	&::placeholder {
 		font-size: 12px;
 		line-height: 1.5;

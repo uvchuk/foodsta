@@ -1,17 +1,23 @@
 .customers {
 	&__container {
 		@extend %container;
-		@extend %section;
 		background-repeat: no-repeat;
 		background-position: bottom;
 		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 60px;
 			background-image: url(../img/bcgd/customers/customers_bcgd_mobile.svg);
 			background-size: cover;
 		}
 		@include tablet {
+			padding-top: 60px;
+			padding-bottom: 120px;
 			background-image: url(../img/bcgd/customers/customers_bcgd_tablet.svg);
+			background-size: 100% 100%;
 		}
 		@include desktop {
+			padding-top: 100px;
+			padding-bottom: 200px;
 			background-image: url(../img/bcgd/customers/customers_bcgd_desktop.svg);
 			background-size: 100% 100%;
 		}
@@ -22,8 +28,10 @@
 	}
 
 	&__description {
-		@include mobile {
-			margin-top: 20px;
+		margin-top: 20px;
+		@include tabletPlus {
+			font-size: 16px;
+			line-height: 1.19;
 		}
 	}
 }
@@ -31,37 +39,53 @@
 .opinion {
 	&__list {
 		display: flex;
+		margin-top: 32px;
 		@include mobile {
-			margin-top: 32px;
 			flex-direction: column;
 			gap: 24px;
+		}
+		@include tablet {
+			gap: 32px;
+		}
+		@include desktop {
+			gap: 140px;
 		}
 	}
 
 	&__item {
+		border-top-right-radius: 30px;
+		border-bottom-right-radius: 30px;
+		border-bottom-left-radius: 30px;
 		background-color: var(--tert-bcgd);
+		&::before {
+			content: "";
+			display: block;
+			width: 100px;
+			height: 16px;
+			background-image: url(../img/icons/star.svg);
+			background-size: 20px 16px;
+		}
 		@include mobile {
 			padding: 8px;
-			border-top-right-radius: 30px;
-			border-bottom-right-radius: 30px;
-			border-bottom-left-radius: 30px;
-			&::before {
-				content: "";
-				display: block;
-				width: 100px;
-				height: 16px;
-				background-image: url(../img/icons/star.svg);
-				background-size: 20px 16px;
-			}
+		}
+		@include tablet {
+			padding: 12px;
+		}
+		@include desktop {
+			padding: 14px;
+			width: 500px;
 		}
 	}
 
 	&__review {
+		margin-top: 28px;
 		font-weight: 700;
-		font-size: 16px;
 		line-height: 1.18;
 		@include mobile {
-			margin-top: 28px;
+			font-size: 16px;
+		}
+		@include tabletPlus {
+			font-size: 18px;
 		}
 	}
 	&__author {

@@ -1,7 +1,9 @@
 .offerings {
 	@include tablet {
-		position: relative;
-		top: -105px;
+		margin-top: -105px;
+	}
+	@include desktop {
+		margin-top: -160px;
 	}
 	&__container {
 		@extend %container;
@@ -110,7 +112,7 @@
 				&:first-child {
 					width: 165px;
 					height: 210px;
-					top: 265px;
+					top: 270px;
 					left: 420px;
 				}
 				&:last-child {
@@ -148,6 +150,7 @@
 		@include tablet {
 			margin-top: 20px;
 			width: 500px;
+			line-height: 1.19;
 		}
 	}
 

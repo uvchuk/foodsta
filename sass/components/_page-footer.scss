@@ -1,19 +1,48 @@
 .page-footer {
 	&__container {
 		@extend %container;
-		@extend %section;
 		box-shadow: 0px -4px 24px rgba(105, 105, 105, 0.1);
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		@include mobile {
+			padding-top: 60px;
+			padding-bottom: 60px;
 			background-image: image-set(
-				url("../img/bcgd/footer/footer_mobile.webp") 1x,
-				url("../img/bcgd/footer/footer_mobile.png") 1x
+				url("../img/bcgd/footer/footer_bcgd_mobile.webp") 1x,
+				url("../img/bcgd/footer/footer_bcgd_mobile.png") 1x
 			);
 			@include retina {
 				background-image: image-set(
-					url("../img/bcgd/footer/footer_mobile@2x.webp") 2x,
-					url("../img/bcgd/footer/footer_mobile@2x.png") 2x
+					url("../img/bcgd/footer/footer_bcgd_mobile@2x.webp") 2x,
+					url("../img/bcgd/footer/footer_bcgd_mobile@2x.png") 2x
+				);
+			}
+		}
+		@include tablet {
+			padding-top: 100px;
+			padding-bottom: 100px;
+			background-image: image-set(
+				url("../img/bcgd/footer/footer_bcgd_tablet.webp") 1x,
+				url("../img/bcgd/footer/footer_bcgd_tablet.png") 1x
+			);
+			@include retina {
+				background-image: image-set(
+					url("../img/bcgd/footer/footer_bcgd_tablet@2x.webp") 2x,
+					url("../img/bcgd/footer/footer_bcgd_tablet@2x.png") 2x
+				);
+			}
+		}
+		@include desktop {
+			padding-top: 100px;
+			padding-bottom: 100px;
+			background-image: image-set(
+				url("../img/bcgd/footer/footer_bcgd_desktop.webp") 1x,
+				url("../img/bcgd/footer/footer_bcgd_desktop.png") 1x
+			);
+			@include retina {
+				background-image: image-set(
+					url("../img/bcgd/footer/footer_bcgd_desktop@2x.webp") 2x,
+					url("../img/bcgd/footer/footer_bcgd_desktop@2x.png") 2x
 				);
 			}
 		}
@@ -21,17 +50,22 @@
 
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
+		@include mobile {
+			justify-content: space-between;
+		}
+		@include tablet {
+			align-items: center;
+		}
 	}
 
 	&__logo {
 		@include mobile {
-			display: inline-block;
 			vertical-align: top;
 		}
 	}
 
 	&__icon {
+		display: block;
 	}
 
 	&__nav {
@@ -39,38 +73,69 @@
 			display: inline-block;
 			margin-right: 80px;
 		}
+		@include tablet {
+			margin-right: 200px;
+			margin-left: auto;
+		}
+	}
+
+	&__list {
+		@include tablet {
+			display: flex;
+			align-items: center;
+			gap: 28px;
+		}
 	}
 
 	&__item {
-		&:not(:first-child) {
-			margin-top: 20px;
+		@include mobile {
+			&:not(:first-child) {
+				margin-top: 20px;
+			}
 		}
 	}
 
 	&__link {
+		display: inline-block;
+		font-size: 14px;
+		line-height: 1.14;
 		color: var(--scnd-text);
 		@include animated(color);
-		&:hover,
-		&:focus {
-			color: var(--accent);
+		@include mobile {
+			&:active {
+				color: var(--accent);
+			}
+		}
+		@include tabletPlus {
+			padding-top: 18px;
+			padding-bottom: 18px;
+			&:hover,
+			&:focus {
+				color: var(--accent);
+			}
 		}
 	}
 
 	&__form {
-		@include mobile {
-			margin-top: 40px;
-		}
+		margin-top: 40px;
 	}
 
 	&__label {
 		font-weight: 500;
 		line-height: 1.5;
+		@include tablet {
+			display: block;
+		}
 	}
 
 	&__input {
 		@extend %input;
+		margin-top: 12px;
 		@include mobile {
-			margin-top: 12px;
+			width: 100%;
+		}
+		@include tablet {
+			width: 280px;
 		}
 	}
 
@@ -82,12 +147,22 @@
 			display: block;
 			margin-left: auto;
 		}
+		@include tablet {
+			margin-left: 13px;
+		}
 	}
 
 	&__agreement {
-		margin-top: 20px;
-		font-size: 10px;
-		line-height: 1.2;
+		@include mobile {
+			margin-top: 20px;
+			font-size: 10px;
+			line-height: 1.2;
+		}
+		@include tablet {
+			margin-top: 12px;
+			font-size: 12px;
+			line-height: 1.17;
+		}
 	}
 
 	&__license {
@@ -96,24 +171,49 @@
 	}
 }
 .extras {
-	&__list {
+	@include mobile {
 		margin-top: 60px;
+	}
+	@include tablet {
+		margin-top: 100px;
 		display: flex;
-		justify-content: space-between;
+		align-items: center;
+	}
+	&__list {
+		display: flex;
+		@include mobile {
+			justify-content: space-between;
+		}
+		@include tablet {
+			gap: 20px;
+		}
 	}
 
 	&__item {
-		font-size: 10px;
-		line-height: 1.2;
 	}
 
 	&__link {
 		text-decoration: underline;
 		color: var(--border-color);
+		@include mobile {
+			font-size: 10px;
+			line-height: 1.2;
+		}
+		@include tabletPlus {
+			font-size: 12px;
+			line-height: 1.17;
+		}
 	}
 
 	&__license {
-		text-align: center;
-		margin-top: 40px;
+		@include mobile {
+			margin-top: 40px;
+			text-align: center;
+		}
+		@include tablet {
+			margin-left: auto;
+			font-size: 12px;
+			line-height: 1.17;
+		}
 	}
 }
