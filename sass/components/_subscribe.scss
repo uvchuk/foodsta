@@ -1,4 +1,7 @@
 .subscribe {
+	@include desktop {
+		margin-top: -55px;
+	}
 	&__container {
 		@extend %container;
 		@include mobile {
@@ -7,6 +10,10 @@
 		}
 		@include tablet {
 			padding-top: 80px;
+			padding-bottom: 100px;
+		}
+		@include desktop {
+			padding-top: 45px;
 			padding-bottom: 100px;
 		}
 		position: relative;
@@ -30,6 +37,8 @@
 		@include desktop {
 			width: 610px;
 			height: 265px;
+			left: 655px;
+			top: -25px;
 		}
 	}
 
@@ -42,13 +51,16 @@
 		@include tablet {
 			line-height: 1.5;
 		}
+		@include desktop {
+			width: 655px;
+		}
 	}
 
 	&__form {
 		@include mobile {
 			margin-top: 40px;
 		}
-		@include tablet {
+		@include tabletPlus {
 			margin-top: 24px;
 		}
 	}
@@ -58,7 +70,7 @@
 		@include mobile {
 			width: 100%;
 		}
-		@include tablet {
+		@include tabletPlus {
 			width: 395px;
 		}
 	}
@@ -72,6 +84,9 @@
 		@include tablet {
 			display: inline-block;
 			margin-left: 22px;
+		}
+		@include desktop {
+			margin-left: 32px;
 		}
 		@extend %btn, %btn-prim;
 		padding: 11px 22px;
