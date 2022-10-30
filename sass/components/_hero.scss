@@ -6,10 +6,12 @@
 			padding-bottom: 50px;
 		}
 		@include tablet {
+			position: relative;
 			padding-top: 60px;
 			padding-bottom: 73px;
 		}
 		@include desktop {
+			position: relative;
 			padding-top: 159px;
 			padding-bottom: 164px;
 		}
@@ -60,3 +62,5 @@
 		padding: 6px 18px;
 	}
 }
+
+@import "./slider";
